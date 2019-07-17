@@ -52,7 +52,7 @@
 <layer number="42" name="bRestrict" color="1" fill="10" visible="yes" active="yes"/>
 <layer number="43" name="vRestrict" color="2" fill="10" visible="yes" active="yes"/>
 <layer number="44" name="Drills" color="7" fill="1" visible="no" active="yes"/>
-<layer number="45" name="Holes" color="7" fill="1" visible="no" active="yes"/>
+<layer number="45" name="Holes" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="46" name="Milling" color="3" fill="1" visible="no" active="yes"/>
 <layer number="47" name="Measures" color="7" fill="1" visible="no" active="yes"/>
 <layer number="48" name="Document" color="7" fill="1" visible="yes" active="yes"/>
@@ -93,6 +93,32 @@
 </polygon>
 <text x="0" y="-0.25" size="0.25" layer="27" font="vector" rot="R180" align="center">&gt;VALUE</text>
 <text x="0" y="0.25" size="0.35" layer="25" font="vector" rot="R180" align="center">&gt;NAME</text>
+</package>
+<package name="SOP-4">
+<smd name="1" x="-2.75" y="1.27" dx="1.45" dy="0.55" layer="1" roundness="100"/>
+<smd name="2" x="-2.75" y="-1.27" dx="1.45" dy="0.55" layer="1" roundness="100"/>
+<smd name="3" x="2.75" y="-1.27" dx="1.45" dy="0.55" layer="1" roundness="100"/>
+<smd name="4" x="2.75" y="1.27" dx="1.45" dy="0.55" layer="1" roundness="100"/>
+<rectangle x1="-3.048" y1="-2.0447" x2="3.048" y2="2.0447" layer="39"/>
+<text x="0" y="0.635" size="0.889" layer="25" font="vector" align="center">&gt;NAME</text>
+<text x="0" y="-0.635" size="0.635" layer="27" font="vector" align="center">&gt;VALUE</text>
+</package>
+<package name="RJ12">
+<hole x="-5.08" y="-6.5" drill="3.2"/>
+<hole x="5.08" y="-6.5" drill="3.2"/>
+<pad name="1" x="3.175" y="-15.39" drill="0.9"/>
+<pad name="2" x="1.905" y="-12.85" drill="0.9"/>
+<pad name="3" x="0.635" y="-15.39" drill="0.9"/>
+<pad name="4" x="-0.635" y="-12.85" drill="0.9"/>
+<pad name="5" x="-1.905" y="-15.39" drill="0.9"/>
+<pad name="6" x="-3.175" y="-12.85" drill="0.9"/>
+<wire x1="-6.73" y1="0" x2="6.73" y2="0" width="0.127" layer="21"/>
+<wire x1="6.73" y1="0" x2="6.73" y2="-15.9" width="0.127" layer="21"/>
+<wire x1="-6.73" y1="-15.9" x2="-6.73" y2="0" width="0.127" layer="21"/>
+<wire x1="-6.73" y1="-15.9" x2="-4" y2="-15.9" width="0.127" layer="21"/>
+<wire x1="4" y1="-15.9" x2="6.73" y2="-15.9" width="0.127" layer="21"/>
+<text x="0" y="-2" size="1.27" layer="21" font="vector" align="center">&gt;NAME</text>
+<text x="0" y="-4" size="0.889" layer="21" font="vector" align="center">&gt;VALUE</text>
 </package>
 </packages>
 <symbols>
@@ -188,6 +214,24 @@
 <pin name="SOURCE" x="0" y="-5.08" visible="off" length="point"/>
 <pin name="DRAIN" x="0" y="5.08" visible="off" length="point"/>
 </symbol>
+<symbol name="RJ12">
+<pin name="C1-H" x="-2.54" y="15.24" visible="pin" length="short"/>
+<pin name="C1-L" x="-2.54" y="12.7" visible="pin" length="short"/>
+<pin name="C2-H" x="-2.54" y="10.16" visible="pin" length="short"/>
+<pin name="C2-L" x="-2.54" y="7.62" visible="pin" length="short"/>
+<pin name="SIG" x="-2.54" y="5.08" visible="pin" length="short"/>
+<pin name="GND" x="-2.54" y="2.54" visible="pin" length="short"/>
+<wire x1="0" y1="17.78" x2="0" y2="0" width="0.254" layer="94"/>
+<wire x1="0" y1="0" x2="10.16" y2="0" width="0.254" layer="94"/>
+<wire x1="10.16" y1="0" x2="10.16" y2="5.08" width="0.254" layer="94"/>
+<wire x1="10.16" y1="5.08" x2="12.7" y2="5.08" width="0.254" layer="94"/>
+<wire x1="12.7" y1="5.08" x2="12.7" y2="12.7" width="0.254" layer="94"/>
+<wire x1="12.7" y1="12.7" x2="10.16" y2="12.7" width="0.254" layer="94"/>
+<wire x1="10.16" y1="12.7" x2="10.16" y2="17.78" width="0.254" layer="94"/>
+<wire x1="10.16" y1="17.78" x2="0" y2="17.78" width="0.254" layer="94"/>
+<text x="0" y="17.78" size="1.905" layer="95" font="vector">&gt;NAME</text>
+<text x="0" y="0" size="1.905" layer="96" font="vector" align="top-left">&gt;VALUE</text>
+</symbol>
 </symbols>
 <devicesets>
 <deviceset name="NX7002AK">
@@ -200,6 +244,44 @@
 <connect gate="G$1" pin="DRAIN" pad="3"/>
 <connect gate="G$1" pin="GATE" pad="1"/>
 <connect gate="G$1" pin="SOURCE" pad="2"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="CPC1017N">
+<gates>
+<gate name="G$1" symbol="CPC1017N" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="SOP-4">
+<connects>
+<connect gate="G$1" pin="+" pad="1"/>
+<connect gate="G$1" pin="-" pad="2"/>
+<connect gate="G$1" pin="LOAD@1" pad="4"/>
+<connect gate="G$1" pin="LOAD@2" pad="3"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="RJ12">
+<gates>
+<gate name="G$1" symbol="RJ12" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="RJ12">
+<connects>
+<connect gate="G$1" pin="C1-H" pad="1"/>
+<connect gate="G$1" pin="C1-L" pad="2"/>
+<connect gate="G$1" pin="C2-H" pad="3"/>
+<connect gate="G$1" pin="C2-L" pad="4"/>
+<connect gate="G$1" pin="GND" pad="6"/>
+<connect gate="G$1" pin="SIG" pad="5"/>
 </connects>
 <technologies>
 <technology name=""/>
