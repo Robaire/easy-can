@@ -6,14 +6,14 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.025" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="5" altunitdist="mil" altunit="mil"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="16" fill="1" visible="no" active="yes"/>
 <layer number="3" name="Route3" color="17" fill="1" visible="no" active="yes"/>
 <layer number="4" name="Route4" color="18" fill="1" visible="no" active="yes"/>
 <layer number="5" name="Route5" color="19" fill="1" visible="no" active="yes"/>
-<layer number="6" name="Route6" color="25" fill="1" visible="no" active="yes"/>
+<layer number="6" name="Route6" color="25" fill="1" visible="yes" active="yes"/>
 <layer number="7" name="Route7" color="26" fill="1" visible="no" active="yes"/>
 <layer number="8" name="Route8" color="27" fill="1" visible="no" active="yes"/>
 <layer number="9" name="Route9" color="28" fill="1" visible="no" active="yes"/>
@@ -112,13 +112,18 @@
 <pad name="4" x="-0.635" y="-12.85" drill="0.9"/>
 <pad name="5" x="-1.905" y="-15.39" drill="0.9"/>
 <pad name="6" x="-3.175" y="-12.85" drill="0.9"/>
-<wire x1="-6.73" y1="0" x2="6.73" y2="0" width="0.127" layer="21"/>
+<wire x1="-6.73" y1="0" x2="-1.905" y2="0" width="0.127" layer="21"/>
+<wire x1="-1.905" y1="0" x2="1.905" y2="0" width="0.127" layer="21"/>
+<wire x1="1.905" y1="0" x2="6.73" y2="0" width="0.127" layer="21"/>
 <wire x1="6.73" y1="0" x2="6.73" y2="-15.9" width="0.127" layer="21"/>
 <wire x1="-6.73" y1="-15.9" x2="-6.73" y2="0" width="0.127" layer="21"/>
 <wire x1="-6.73" y1="-15.9" x2="-4" y2="-15.9" width="0.127" layer="21"/>
 <wire x1="4" y1="-15.9" x2="6.73" y2="-15.9" width="0.127" layer="21"/>
-<text x="0" y="-2" size="1.27" layer="21" font="vector" align="center">&gt;NAME</text>
-<text x="0" y="-4" size="0.889" layer="21" font="vector" align="center">&gt;VALUE</text>
+<text x="0" y="-2" size="1.27" layer="25" font="vector" align="center">&gt;NAME</text>
+<text x="0" y="-4" size="0.889" layer="27" font="vector" align="center">&gt;VALUE</text>
+<wire x1="-1.905" y1="0" x2="-1.905" y2="-0.635" width="0.127" layer="21"/>
+<wire x1="-1.905" y1="-0.635" x2="1.905" y2="-0.635" width="0.127" layer="21"/>
+<wire x1="1.905" y1="-0.635" x2="1.905" y2="0" width="0.127" layer="21"/>
 </package>
 <package name="0603-LED">
 <smd name="1" x="-0.8" y="0" dx="0.8" dy="0.8" layer="1"/>
@@ -132,6 +137,20 @@
 <vertex x="0.1" y="-0.2"/>
 </polygon>
 <rectangle x1="-1.2" y1="-0.4" x2="1.2" y2="0.4" layer="39"/>
+</package>
+<package name="0402">
+<smd name="2" x="0.45" y="0" dx="0.4" dy="0.6" layer="1"/>
+<smd name="1" x="-0.45" y="0" dx="0.4" dy="0.6" layer="1"/>
+<rectangle x1="-0.6" y1="-0.3" x2="0.6" y2="0.3" layer="39"/>
+<text x="0" y="0.4" size="0.3" layer="25" font="vector" align="bottom-center">&gt;NAME</text>
+<text x="0" y="-0.4" size="0.15" layer="27" font="vector" rot="R180" align="bottom-center">&gt;VALUE</text>
+</package>
+<package name="0603">
+<smd name="1" x="-0.75" y="0" dx="0.5" dy="0.9" layer="1"/>
+<smd name="2" x="0.75" y="0" dx="0.5" dy="0.9" layer="1"/>
+<rectangle x1="-0.9" y1="-0.45" x2="0.9" y2="0.45" layer="39"/>
+<text x="0" y="0.6" size="0.5" layer="25" font="vector" align="bottom-center">&gt;NAME</text>
+<text x="0" y="-0.6" size="0.3" layer="27" font="vector" rot="R180" align="bottom-center">&gt;VALUE</text>
 </package>
 </packages>
 <symbols>
@@ -309,6 +328,21 @@
 <text x="3.175" y="0" size="1.27" layer="95" font="vector" rot="R90" align="center">&gt;NAME</text>
 <text x="4.445" y="0" size="0.762" layer="96" font="vector" rot="R90" align="center">&gt;VALUE</text>
 </symbol>
+<symbol name="RESISTOR">
+<pin name="1" x="-2.54" y="0" visible="off" length="point"/>
+<pin name="2" x="2.54" y="0" visible="off" length="point" rot="R180"/>
+<text x="-0.3175" y="1.524" size="1.27" layer="95" font="vector" align="bottom-center">&gt;NAME</text>
+<text x="0" y="-1.524" size="0.889" layer="96" font="vector" rot="R180" align="bottom-center">&gt;VALUE</text>
+<wire x1="-2.54" y1="0" x2="-1.905" y2="0" width="0.254" layer="94"/>
+<wire x1="2.54" y1="0" x2="1.905" y2="0" width="0.254" layer="94"/>
+<wire x1="-1.5875" y1="1.27" x2="-0.9525" y2="-1.27" width="0.254" layer="94"/>
+<wire x1="-0.9525" y1="-1.27" x2="-0.3175" y2="1.27" width="0.254" layer="94"/>
+<wire x1="-0.3175" y1="1.27" x2="0.3175" y2="-1.27" width="0.254" layer="94"/>
+<wire x1="0.3175" y1="-1.27" x2="0.9525" y2="1.27" width="0.254" layer="94"/>
+<wire x1="-1.5875" y1="1.27" x2="-1.905" y2="0" width="0.254" layer="94"/>
+<wire x1="0.9525" y1="1.27" x2="1.5875" y2="-1.27" width="0.254" layer="94"/>
+<wire x1="1.5875" y1="-1.27" x2="1.905" y2="0" width="0.254" layer="94"/>
+</symbol>
 </symbols>
 <devicesets>
 <deviceset name="NX7002AK">
@@ -414,6 +448,64 @@
 <technologies>
 <technology name="">
 <attribute name="VALUE" value="GREEN" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="10K">
+<gates>
+<gate name="G$1" symbol="RESISTOR" x="0" y="0"/>
+</gates>
+<devices>
+<device name="0603" package="0603">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="2"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="VALUE" value="10K" constant="no"/>
+</technology>
+</technologies>
+</device>
+<device name="0402" package="0402">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="2"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="VALUE" value="10K" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="130">
+<gates>
+<gate name="G$1" symbol="RESISTOR" x="0" y="0"/>
+</gates>
+<devices>
+<device name="0603" package="0603">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="2"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="VALUE" value="130" constant="no"/>
+</technology>
+</technologies>
+</device>
+<device name="0402" package="0402">
+<connects>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="2"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="VALUE" value="130" constant="no"/>
 </technology>
 </technologies>
 </device>
