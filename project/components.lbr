@@ -73,7 +73,7 @@
 </layers>
 <library>
 <packages>
-<package name="SOT23">
+<package name="SOT-23">
 <smd name="3" x="0" y="1" dx="0.6" dy="0.7" layer="1"/>
 <smd name="1" x="-0.8" y="-1" dx="0.6" dy="0.7" layer="1"/>
 <smd name="2" x="0.8" y="-1" dx="0.6" dy="0.7" layer="1"/>
@@ -267,20 +267,20 @@
 <text x="4.445" y="0" size="0.762" layer="96" font="vector" rot="R90" align="center">&gt;VALUE</text>
 </symbol>
 <symbol name="RJ12">
-<pin name="C1-H" x="-2.54" y="15.24" visible="pin" length="short"/>
-<pin name="C1-L" x="-2.54" y="12.7" visible="pin" length="short"/>
-<pin name="SIG" x="-2.54" y="7.62" visible="pin" length="short"/>
-<pin name="GND" x="-2.54" y="10.16" visible="pin" length="short"/>
-<pin name="C2-H" x="-2.54" y="5.08" visible="pin" length="short"/>
-<pin name="C2-L" x="-2.54" y="2.54" visible="pin" length="short"/>
+<pin name="1" x="-2.54" y="15.24" visible="pin" length="short"/>
+<pin name="2" x="-2.54" y="12.7" visible="pin" length="short"/>
+<pin name="4" x="-2.54" y="7.62" visible="pin" length="short"/>
+<pin name="3" x="-2.54" y="10.16" visible="pin" length="short"/>
+<pin name="5" x="-2.54" y="5.08" visible="pin" length="short"/>
+<pin name="6" x="-2.54" y="2.54" visible="pin" length="short"/>
 <wire x1="0" y1="17.78" x2="0" y2="0" width="0.254" layer="94"/>
-<wire x1="0" y1="0" x2="10.16" y2="0" width="0.254" layer="94"/>
-<wire x1="10.16" y1="0" x2="10.16" y2="5.08" width="0.254" layer="94"/>
-<wire x1="10.16" y1="5.08" x2="12.7" y2="5.08" width="0.254" layer="94"/>
-<wire x1="12.7" y1="5.08" x2="12.7" y2="12.7" width="0.254" layer="94"/>
-<wire x1="12.7" y1="12.7" x2="10.16" y2="12.7" width="0.254" layer="94"/>
-<wire x1="10.16" y1="12.7" x2="10.16" y2="17.78" width="0.254" layer="94"/>
-<wire x1="10.16" y1="17.78" x2="0" y2="17.78" width="0.254" layer="94"/>
+<wire x1="0" y1="0" x2="7.62" y2="0" width="0.254" layer="94"/>
+<wire x1="7.62" y1="0" x2="7.62" y2="5.08" width="0.254" layer="94"/>
+<wire x1="7.62" y1="5.08" x2="8.89" y2="5.08" width="0.254" layer="94"/>
+<wire x1="8.89" y1="5.08" x2="8.89" y2="12.7" width="0.254" layer="94"/>
+<wire x1="8.89" y1="12.7" x2="7.62" y2="12.7" width="0.254" layer="94"/>
+<wire x1="7.62" y1="12.7" x2="7.62" y2="17.78" width="0.254" layer="94"/>
+<wire x1="7.62" y1="17.78" x2="0" y2="17.78" width="0.254" layer="94"/>
 <text x="0" y="17.78" size="1.905" layer="95" font="vector">&gt;NAME</text>
 <text x="0" y="0" size="1.905" layer="96" font="vector" align="top-left">&gt;VALUE</text>
 </symbol>
@@ -381,19 +381,21 @@
 </symbol>
 </symbols>
 <devicesets>
-<deviceset name="NX7002AK">
+<deviceset name="N-FET" prefix="M">
 <gates>
 <gate name="G$1" symbol="N-CHANNEL" x="0" y="0"/>
 </gates>
 <devices>
-<device name="" package="SOT23">
+<device name="" package="SOT-23">
 <connects>
 <connect gate="G$1" pin="DRAIN" pad="3"/>
 <connect gate="G$1" pin="GATE" pad="1"/>
 <connect gate="G$1" pin="SOURCE" pad="2"/>
 </connects>
 <technologies>
-<technology name=""/>
+<technology name="">
+<attribute name="VALUE" value="NX7002AK" constant="no"/>
+</technology>
 </technologies>
 </device>
 </devices>
@@ -416,19 +418,19 @@
 </device>
 </devices>
 </deviceset>
-<deviceset name="RJ12">
+<deviceset name="RJ12" prefix="X">
 <gates>
 <gate name="G$1" symbol="RJ12" x="0" y="0"/>
 </gates>
 <devices>
 <device name="" package="RJ12">
 <connects>
-<connect gate="G$1" pin="C1-H" pad="1"/>
-<connect gate="G$1" pin="C1-L" pad="2"/>
-<connect gate="G$1" pin="C2-H" pad="5"/>
-<connect gate="G$1" pin="C2-L" pad="6"/>
-<connect gate="G$1" pin="GND" pad="3"/>
-<connect gate="G$1" pin="SIG" pad="4"/>
+<connect gate="G$1" pin="1" pad="1"/>
+<connect gate="G$1" pin="2" pad="2"/>
+<connect gate="G$1" pin="3" pad="3"/>
+<connect gate="G$1" pin="4" pad="4"/>
+<connect gate="G$1" pin="5" pad="5"/>
+<connect gate="G$1" pin="6" pad="6"/>
 </connects>
 <technologies>
 <technology name="">
@@ -438,112 +440,20 @@
 </device>
 </devices>
 </deviceset>
-<deviceset name="150060RS75000">
-<gates>
-<gate name="LED" symbol="LED" x="0" y="0"/>
-</gates>
-<devices>
-<device name="" package="0603-LED">
-<connects>
-<connect gate="LED" pin="+" pad="2"/>
-<connect gate="LED" pin="-" pad="1"/>
-</connects>
-<technologies>
-<technology name="">
-<attribute name="VALUE" value="RED" constant="no"/>
-</technology>
-</technologies>
-</device>
-</devices>
-</deviceset>
-<deviceset name="NX3008PBK">
+<deviceset name="P-FET" prefix="M">
 <gates>
 <gate name="G$1" symbol="P-CHANNEL" x="0" y="0"/>
 </gates>
 <devices>
-<device name="" package="SOT23">
+<device name="" package="SOT-23">
 <connects>
 <connect gate="G$1" pin="DRAIN" pad="3"/>
 <connect gate="G$1" pin="GATE" pad="1"/>
 <connect gate="G$1" pin="SOURCE" pad="2"/>
 </connects>
 <technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
-<deviceset name="150060VS75000">
-<gates>
-<gate name="LED" symbol="LED" x="0" y="0"/>
-</gates>
-<devices>
-<device name="" package="0603-LED">
-<connects>
-<connect gate="LED" pin="+" pad="2"/>
-<connect gate="LED" pin="-" pad="1"/>
-</connects>
-<technologies>
 <technology name="">
-<attribute name="VALUE" value="GREEN" constant="no"/>
-</technology>
-</technologies>
-</device>
-</devices>
-</deviceset>
-<deviceset name="10K">
-<gates>
-<gate name="G$1" symbol="RESISTOR" x="0" y="0"/>
-</gates>
-<devices>
-<device name="0603" package="0603">
-<connects>
-<connect gate="G$1" pin="1" pad="1"/>
-<connect gate="G$1" pin="2" pad="2"/>
-</connects>
-<technologies>
-<technology name="">
-<attribute name="VALUE" value="10K" constant="no"/>
-</technology>
-</technologies>
-</device>
-<device name="0402" package="0402">
-<connects>
-<connect gate="G$1" pin="1" pad="1"/>
-<connect gate="G$1" pin="2" pad="2"/>
-</connects>
-<technologies>
-<technology name="">
-<attribute name="VALUE" value="10K" constant="no"/>
-</technology>
-</technologies>
-</device>
-</devices>
-</deviceset>
-<deviceset name="130">
-<gates>
-<gate name="G$1" symbol="RESISTOR" x="0" y="0"/>
-</gates>
-<devices>
-<device name="0603" package="0603">
-<connects>
-<connect gate="G$1" pin="1" pad="1"/>
-<connect gate="G$1" pin="2" pad="2"/>
-</connects>
-<technologies>
-<technology name="">
-<attribute name="VALUE" value="130" constant="no"/>
-</technology>
-</technologies>
-</device>
-<device name="0402" package="0402">
-<connects>
-<connect gate="G$1" pin="1" pad="1"/>
-<connect gate="G$1" pin="2" pad="2"/>
-</connects>
-<technologies>
-<technology name="">
-<attribute name="VALUE" value="130" constant="no"/>
+<attribute name="VALUE" value="NX3008PBK" constant="no"/>
 </technology>
 </technologies>
 </device>
@@ -576,6 +486,47 @@
 <connects>
 <connect gate="G$1" pin="1" pad="1"/>
 <connect gate="G$1" pin="2" pad="2"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="RESISTOR" prefix="R" uservalue="yes">
+<gates>
+<gate name="R$1" symbol="RESISTOR" x="0" y="0"/>
+</gates>
+<devices>
+<device name="0603" package="0603">
+<connects>
+<connect gate="R$1" pin="1" pad="1"/>
+<connect gate="R$1" pin="2" pad="2"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="0402" package="0402">
+<connects>
+<connect gate="R$1" pin="1" pad="1"/>
+<connect gate="R$1" pin="2" pad="2"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="LED" prefix="D" uservalue="yes">
+<gates>
+<gate name="G$1" symbol="LED" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="0603-LED">
+<connects>
+<connect gate="G$1" pin="+" pad="2"/>
+<connect gate="G$1" pin="-" pad="1"/>
 </connects>
 <technologies>
 <technology name=""/>
