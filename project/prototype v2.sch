@@ -3,7 +3,7 @@
 <eagle version="9.4.2">
 <drawing>
 <settings>
-<setting alwaysvectorfont="no"/>
+<setting alwaysvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
 <grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
@@ -153,10 +153,10 @@
 <wire x1="-6.73" y1="0" x2="-1.905" y2="0" width="0.127" layer="21"/>
 <wire x1="-1.905" y1="0" x2="1.905" y2="0" width="0.127" layer="21"/>
 <wire x1="1.905" y1="0" x2="6.73" y2="0" width="0.127" layer="21"/>
-<wire x1="6.73" y1="0" x2="6.73" y2="-15.9" width="0.127" layer="21"/>
-<wire x1="-6.73" y1="-15.9" x2="-6.73" y2="0" width="0.127" layer="21"/>
-<wire x1="-6.73" y1="-15.9" x2="-4" y2="-15.9" width="0.127" layer="21"/>
-<wire x1="4" y1="-15.9" x2="6.73" y2="-15.9" width="0.127" layer="21"/>
+<wire x1="6.73" y1="0" x2="6.73" y2="-16.5" width="0.127" layer="21"/>
+<wire x1="-6.73" y1="-16.5" x2="-6.73" y2="0" width="0.127" layer="21"/>
+<wire x1="-6.73" y1="-16.5" x2="-4" y2="-16.5" width="0.127" layer="21"/>
+<wire x1="4" y1="-16.5" x2="6.73" y2="-16.5" width="0.127" layer="21"/>
 <text x="0" y="-2" size="1.27" layer="25" font="vector" align="center">&gt;NAME</text>
 <text x="0" y="-4" size="0.889" layer="27" font="vector" align="center">&gt;VALUE</text>
 <wire x1="-1.905" y1="0" x2="-1.905" y2="-0.635" width="0.127" layer="21"/>
